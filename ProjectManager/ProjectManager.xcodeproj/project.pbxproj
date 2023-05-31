@@ -20,12 +20,12 @@
 		983C04362A1B4BDA000E4702 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C04352A1B4BDA000E4702 /* DateFormatterManager.swift */; };
 		983C043E2A1DAB0D000E4702 /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C043D2A1DAB0D000E4702 /* ScheduleType.swift */; };
 		983C04442A2084DD000E4702 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C04432A2084DD000E4702 /* Namespace.swift */; };
-		983C04512A25CA4B000E4702 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983C04502A25CA4B000E4702 /* GoogleService-Info.plist */; };
 		983C04542A25CAB7000E4702 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 983C04532A25CAB7000E4702 /* FirebaseAnalytics */; };
 		983C04562A25CAB7000E4702 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 983C04552A25CAB7000E4702 /* FirebaseDatabase */; };
 		983C04582A25CAB7000E4702 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 983C04572A25CAB7000E4702 /* FirebaseFirestore */; };
 		983C045A2A25CAB7000E4702 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 983C04592A25CAB7000E4702 /* FirebaseStorage */; };
 		983C045C2A25CB38000E4702 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C045B2A25CB38000E4702 /* FirebaseManager.swift */; };
+		983C045E2A272F76000E4702 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983C045D2A272F76000E4702 /* GoogleService-Info.plist */; };
 		C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7431F0525F51E1D0094C4CF /* AppDelegate.swift */; };
 		C7431F0825F51E1D0094C4CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7431F0725F51E1D0094C4CF /* SceneDelegate.swift */; };
 		C7431F0A25F51E1D0094C4CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7431F0925F51E1D0094C4CF /* MainViewController.swift */; };
@@ -47,8 +47,8 @@
 		983C04352A1B4BDA000E4702 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		983C043D2A1DAB0D000E4702 /* ScheduleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleType.swift; sourceTree = "<group>"; };
 		983C04432A2084DD000E4702 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
-		983C04502A25CA4B000E4702 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		983C045B2A25CB38000E4702 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		983C045D2A272F76000E4702 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7431F0225F51E1D0094C4CF /* ProjectManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7431F0525F51E1D0094C4CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7431F0725F51E1D0094C4CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				C7431F0E25F51E1E0094C4CF /* Assets.xcassets */,
 				C7431F1025F51E1E0094C4CF /* LaunchScreen.storyboard */,
 				C7431F1325F51E1E0094C4CF /* Info.plist */,
-				983C04502A25CA4B000E4702 /* GoogleService-Info.plist */,
+				983C045D2A272F76000E4702 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 			files = (
 				C7431F1225F51E1E0094C4CF /* LaunchScreen.storyboard in Resources */,
 				C7431F0F25F51E1E0094C4CF /* Assets.xcassets in Resources */,
-				983C04512A25CA4B000E4702 /* GoogleService-Info.plist in Resources */,
+				983C045E2A272F76000E4702 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
