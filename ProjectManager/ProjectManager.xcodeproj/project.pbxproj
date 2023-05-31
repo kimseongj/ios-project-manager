@@ -11,11 +11,12 @@
 		1C16A8712A14B484001640E2 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16A8702A14B484001640E2 /* ScheduleCell.swift */; };
 		1C16A8732A14B705001640E2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16A8722A14B705001640E2 /* Schedule.swift */; };
 		1C38D0632A1DE14400835A95 /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C38D0622A1DE14400835A95 /* ModalType.swift */; };
-		1C5906CB2A258A12001F048B /* ConstantSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5906CA2A258A12001F048B /* ConstantSpace.swift */; };
 		1C5906CD2A2597F9001F048B /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5906CC2A2597F9001F048B /* Section.swift */; };
 		1CC9D3E02A160D1E00654A5D /* DoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9D3DF2A160D1E00654A5D /* DoListViewController.swift */; };
 		1CC9D3F82A1B415000654A5D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9D3F72A1B415000654A5D /* ModalViewController.swift */; };
-		1CC9D3FC2A1C4CD300654A5D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9D3FB2A1C4CD300654A5D /* MainViewModel.swift */; };
+		1CC9D3FC2A1C4CD300654A5D /* DoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9D3FB2A1C4CD300654A5D /* DoListViewModel.swift */; };
+		1CE9CABE2A2746BE006FF9AA /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9CABD2A2746BE006FF9AA /* ScheduleManager.swift */; };
+		1CE9CAC02A274801006FF9AA /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9CABF2A274801006FF9AA /* ModalViewModel.swift */; };
 		982DF0862A17ADEA0024BEB1 /* IdentifierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DF0852A17ADEA0024BEB1 /* IdentifierType.swift */; };
 		983C04362A1B4BDA000E4702 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C04352A1B4BDA000E4702 /* DateFormatterManager.swift */; };
 		983C043E2A1DAB0D000E4702 /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983C043D2A1DAB0D000E4702 /* ScheduleType.swift */; };
@@ -38,11 +39,12 @@
 		1C16A8702A14B484001640E2 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		1C16A8722A14B705001640E2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		1C38D0622A1DE14400835A95 /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
-		1C5906CA2A258A12001F048B /* ConstantSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSpace.swift; sourceTree = "<group>"; };
 		1C5906CC2A2597F9001F048B /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1CC9D3DF2A160D1E00654A5D /* DoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoListViewController.swift; sourceTree = "<group>"; };
 		1CC9D3F72A1B415000654A5D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		1CC9D3FB2A1C4CD300654A5D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1CC9D3FB2A1C4CD300654A5D /* DoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoListViewModel.swift; sourceTree = "<group>"; };
+		1CE9CABD2A2746BE006FF9AA /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		1CE9CABF2A274801006FF9AA /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
 		982DF0852A17ADEA0024BEB1 /* IdentifierType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierType.swift; sourceTree = "<group>"; };
 		983C04352A1B4BDA000E4702 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		983C043D2A1DAB0D000E4702 /* ScheduleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleType.swift; sourceTree = "<group>"; };
@@ -77,10 +79,26 @@
 			isa = PBXGroup;
 			children = (
 				C7431F0925F51E1D0094C4CF /* MainViewController.swift */,
-				1C16A8702A14B484001640E2 /* ScheduleCell.swift */,
-				1CC9D3DF2A160D1E00654A5D /* DoListViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1CE9CAC12A274D2C006FF9AA /* DoList */ = {
+			isa = PBXGroup;
+			children = (
+				1C16A86E2A14AC83001640E2 /* TodoHeaderView.swift */,
+				1CC9D3DF2A160D1E00654A5D /* DoListViewController.swift */,
+				1C16A8702A14B484001640E2 /* ScheduleCell.swift */,
+			);
+			path = DoList;
+			sourceTree = "<group>";
+		};
+		1CE9CAC22A274D46006FF9AA /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				1CC9D3F72A1B415000654A5D /* ModalViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		982DF07E2A17ACBA0024BEB1 /* Resource */ = {
@@ -111,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				1CC9D3F92A1C4C5100654A5D /* Main */,
-				1C16A86E2A14AC83001640E2 /* TodoHeaderView.swift */,
-				1CC9D3F72A1B415000654A5D /* ModalViewController.swift */,
+				1CE9CAC12A274D2C006FF9AA /* DoList */,
+				1CE9CAC22A274D46006FF9AA /* Modal */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +141,7 @@
 				1C16A8722A14B705001640E2 /* Schedule.swift */,
 				983C043D2A1DAB0D000E4702 /* ScheduleType.swift */,
 				1C38D0622A1DE14400835A95 /* ModalType.swift */,
+				1CE9CABD2A2746BE006FF9AA /* ScheduleManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,7 +149,8 @@
 		982DF0822A17AD6E0024BEB1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1CC9D3FB2A1C4CD300654A5D /* MainViewModel.swift */,
+				1CC9D3FB2A1C4CD300654A5D /* DoListViewModel.swift */,
+				1CE9CABF2A274801006FF9AA /* ModalViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -157,7 +177,6 @@
 			children = (
 				983C04352A1B4BDA000E4702 /* DateFormatterManager.swift */,
 				983C04432A2084DD000E4702 /* Namespace.swift */,
-				1C5906CA2A258A12001F048B /* ConstantSpace.swift */,
 				1C5906CC2A2597F9001F048B /* Section.swift */,
 				983C045B2A25CB38000E4702 /* FirebaseManager.swift */,
 			);
@@ -268,12 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C5906CB2A258A12001F048B /* ConstantSpace.swift in Sources */,
 				1C16A8732A14B705001640E2 /* Schedule.swift in Sources */,
+				1CE9CABE2A2746BE006FF9AA /* ScheduleManager.swift in Sources */,
 				1C38D0632A1DE14400835A95 /* ModalType.swift in Sources */,
 				1C16A8712A14B484001640E2 /* ScheduleCell.swift in Sources */,
 				1CC9D3E02A160D1E00654A5D /* DoListViewController.swift in Sources */,
 				C7431F0A25F51E1D0094C4CF /* MainViewController.swift in Sources */,
+				1CE9CAC02A274801006FF9AA /* ModalViewModel.swift in Sources */,
 				982DF0862A17ADEA0024BEB1 /* IdentifierType.swift in Sources */,
 				C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */,
 				983C04362A1B4BDA000E4702 /* DateFormatterManager.swift in Sources */,
@@ -283,7 +303,7 @@
 				1C16A86F2A14AC84001640E2 /* TodoHeaderView.swift in Sources */,
 				1C5906CD2A2597F9001F048B /* Section.swift in Sources */,
 				983C04442A2084DD000E4702 /* Namespace.swift in Sources */,
-				1CC9D3FC2A1C4CD300654A5D /* MainViewModel.swift in Sources */,
+				1CC9D3FC2A1C4CD300654A5D /* DoListViewModel.swift in Sources */,
 				983C045C2A25CB38000E4702 /* FirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

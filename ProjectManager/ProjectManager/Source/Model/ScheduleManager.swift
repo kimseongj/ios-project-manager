@@ -1,14 +1,15 @@
 //
-//  MainViewModel.swift
+//  ScheduleManager.swift
 //  ProjectManager
 //
-//  Created by songjun, vetto on 2023/05/23.
+//  Created by songjun, vetto on 2023/05/31.
 //
 
 import Foundation
-import Combine
 
-final class MainViewModel {
+class ScheduleManager {
+    static let shared = ScheduleManager()
+    
     @Published var todoSchedules: [Schedule] = []
     @Published var doingSchedules: [Schedule] = []
     @Published var doneSchedules: [Schedule] = []
@@ -16,16 +17,7 @@ final class MainViewModel {
     func addTodoSchedule(_ schedule: Schedule) {
         todoSchedules.append(schedule)
     }
-    
-    func createSchedule(titleText: String?, contentText: String?, expirationDate: Date) -> Schedule {
-        guard let validTitleText = titleText, let validContentText = contentText else {
-            return Schedule()
-        }
-        
-        let schedule = Schedule(title: validTitleText, content: validContentText, expirationDate: expirationDate)
-        
-        return schedule
-    }
+
     
     func deleteSchedule(scheduleType: ScheduleType, index: Int) {
         switch scheduleType {

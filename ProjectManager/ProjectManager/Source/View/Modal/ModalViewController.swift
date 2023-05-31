@@ -8,7 +8,7 @@
 import UIKit
 
 final class ModalViewController: UIViewController {
-    private let mainViewModel: MainViewModel
+    private let modalViewModel = ModalViewModel()
     private let modalType: ModalType
     private let scheduleType: ScheduleType?
     private let index: Int?
@@ -58,11 +58,9 @@ final class ModalViewController: UIViewController {
         return contentTextView
     }()
     
-    init(viewModel: MainViewModel,
-         modalType: ModalType,
+    init(modalType: ModalType,
          scheduleType: ScheduleType? = nil,
          index: Int? = nil) {
-        self.mainViewModel = viewModel
         self.modalType = modalType
         self.scheduleType = scheduleType
         self.index = index
@@ -139,17 +137,17 @@ final class ModalViewController: UIViewController {
     
     @objc
     private func tapDoneButton() {
-        let schedule = mainViewModel.createSchedule(titleText: titleTextField.text,
+        let schedule = modalViewModel.createSchedule(titleText: titleTextField.text,
                                                     contentText: contentTextView.text,
                                                     expirationDate: datePickerView.date)
 
         switch modalType {
         case .add:
-            mainViewModel.addTodoSchedule(schedule)
+            modalViewModel.addTodoSchedule(schedule)
             dismiss(animated: true)
         case .edit:
             guard let scheduleType, let index else { return }
-            mainViewModel.updateSchedule(scheduleType: scheduleType,
+            modalViewModel.updateSchedule(scheduleType: scheduleType,
                                          schedule: schedule,
                                          index: index)
             dismiss(animated: true)
@@ -175,7 +173,7 @@ final class ModalViewController: UIViewController {
     private func configureSchedule() {
         if modalType == .edit {
             guard let scheduleType, let index else { return }
-            let schedules = mainViewModel.fetchSchedule(scheduleType: scheduleType)
+            let schedules = modalViewModel.fetchSchedule(scheduleType: scheduleType)
             titleTextField.text = schedules[index].title
             datePickerView.date = schedules[index].expirationDate
             contentTextView.text = schedules[index].content

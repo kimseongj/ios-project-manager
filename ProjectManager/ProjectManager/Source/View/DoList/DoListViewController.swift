@@ -11,7 +11,7 @@ import Combine
 class DoListViewController: UIViewController {
     private var cancellables: Set<AnyCancellable> = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Schedule>?
-    private let mainViewModel: MainViewModel
+    private let doListViewModel = DoListViewModel()
     private let scheduleType: ScheduleType
     private let listStackView: UIStackView = {
         let stackView = UIStackView()
@@ -33,10 +33,8 @@ class DoListViewController: UIViewController {
     }()
     
     init(dataSource: UICollectionViewDiffableDataSource<Section, Schedule>? = nil,
-         viewModel: MainViewModel,
          type: ScheduleType) {
         self.dataSource = dataSource
-        self.mainViewModel = viewModel
         self.scheduleType = type
         super.init(nibName: nil, bundle: nil)
     }
@@ -104,17 +102,17 @@ class DoListViewController: UIViewController {
     private func setupViewModelBind() {
         switch scheduleType {
         case .todo:
-            mainViewModel.$todoSchedules.sink {
+            doListViewModel.scheduleManager.$todoSchedules.sink {
                 self.applySnapshot(schedules: $0)
                 self.configureHeaderViewCountLabel(schedules: $0)
             }.store(in: &cancellables)
         case .doing:
-            mainViewModel.$doingSchedules.sink {
+            doListViewModel.scheduleManager.$doingSchedules.sink {
                 self.applySnapshot(schedules: $0)
                 self.configureHeaderViewCountLabel(schedules: $0)
             }.store(in: &cancellables)
         case .done:
-            mainViewModel.$doneSchedules.sink {
+            doListViewModel.scheduleManager.$doneSchedules.sink {
                 self.applySnapshot(schedules: $0)
                 self.configureHeaderViewCountLabel(schedules: $0)
             }.store(in: &cancellables)
@@ -151,7 +149,7 @@ class DoListViewController: UIViewController {
         guard let indexPath = indexPath, let _ = dataSource?.itemIdentifier(for: indexPath) else { return nil }
         let deleteAction = UIContextualAction(style: .destructive, title: Namespace.delete) { [weak self] _, _, completion in
             guard let self else { return }
-            self.mainViewModel.deleteSchedule(scheduleType: self.scheduleType, index: indexPath.row)
+            self.doListViewModel.deleteSchedule(scheduleType: self.scheduleType, index: indexPath.row)
             completion(false)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
@@ -190,15 +188,14 @@ class DoListViewController: UIViewController {
     private func makeAlertAction(title: String, index: Int, toScheduleType: ScheduleType) -> UIAlertAction {
         UIAlertAction(title: title, style: .default) { [weak self] _ in
             guard let self else { return }
-            self.mainViewModel.move(fromIndex: index, from: self.scheduleType, to: toScheduleType)
+            self.doListViewModel.move(fromIndex: index, from: self.scheduleType, to: toScheduleType)
         }
     }
 }
 
 extension DoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let modalViewController = ModalViewController(viewModel: mainViewModel,
-                                                      modalType: .edit,
+        let modalViewController = ModalViewController(modalType: .edit,
                                                       scheduleType: scheduleType,
                                                       index: indexPath.row)
         let modalNavigationController = UINavigationController(rootViewController: modalViewController)

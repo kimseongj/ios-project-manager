@@ -7,7 +7,6 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    private let mainViewModel = MainViewModel()
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -20,9 +19,9 @@ final class MainViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var todoViewController = DoListViewController(viewModel: mainViewModel, type: .todo)
-    private lazy var doingViewController = DoListViewController(viewModel: mainViewModel, type: .doing)
-    private lazy var doneViewController = DoListViewController(viewModel: mainViewModel, type: .done)
+    private lazy var todoViewController = DoListViewController(type: .todo)
+    private lazy var doingViewController = DoListViewController(type: .doing)
+    private lazy var doneViewController = DoListViewController(type: .done)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +55,7 @@ final class MainViewController: UIViewController {
     }
     
     private func presentAddModal() {
-        let modalViewController = ModalViewController(viewModel: mainViewModel,
-                                                      modalType: .add)
+        let modalViewController = ModalViewController(modalType: .add)
         let modalNavigationController = UINavigationController(rootViewController: modalViewController)
         modalViewController.modalPresentationStyle = .formSheet
         modalViewController.preferredContentSize = CGSize(width: view.bounds.width * 0.5, height: view.bounds.height * 0.7)
