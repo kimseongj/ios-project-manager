@@ -8,6 +8,8 @@
 import UIKit
 
 final class ScheduleCell: UICollectionViewCell {
+    private let cellPadding: CGFloat = 15
+    private let yesterdayInterval: Double = -86400
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -62,10 +64,10 @@ final class ScheduleCell: UICollectionViewCell {
         stackView.addArrangedSubview(expirationLabel)
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ConstantSpace.cellAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ConstantSpace.cellAnchor),
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ConstantSpace.cellAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -ConstantSpace.cellAnchor)
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: cellPadding),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -cellPadding),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: cellPadding),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -cellPadding)
         ])
     }
     
@@ -74,7 +76,7 @@ final class ScheduleCell: UICollectionViewCell {
         contentLabel.text = schedule.content
         expirationLabel.text = DateFormatterManager.shared.convertToDate(from: schedule.expirationDate)
         
-        if schedule.expirationDate < Date(timeIntervalSinceNow: -86400) {
+        if schedule.expirationDate < Date(timeIntervalSinceNow: yesterdayInterval) {
             expirationLabel.textColor = .systemRed
         }
     }

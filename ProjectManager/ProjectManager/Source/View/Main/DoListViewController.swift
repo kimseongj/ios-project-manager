@@ -20,6 +20,7 @@ class DoListViewController: UIViewController {
         
         return stackView
     }()
+    private let headerViewHeight: CGFloat = 50
     private lazy var headerView = TodoHeaderView()
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero,
@@ -66,7 +67,7 @@ class DoListViewController: UIViewController {
             listStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             listStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            headerView.heightAnchor.constraint(equalToConstant: 50),
+            headerView.heightAnchor.constraint(equalToConstant: headerViewHeight),
             headerView.leadingAnchor.constraint(equalTo: listStackView.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: listStackView.trailingAnchor),
             

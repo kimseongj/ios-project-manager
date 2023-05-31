@@ -12,6 +12,7 @@ final class ModalViewController: UIViewController {
     private let modalType: ModalType
     private let scheduleType: ScheduleType?
     private let index: Int?
+    private let padding: CGFloat = 20
 
     private let titleTextField: UITextField = {
         let textField = UITextField()
@@ -89,18 +90,18 @@ final class ModalViewController: UIViewController {
         view.addSubview(contentTextView)
         
         NSLayoutConstraint.activate([
-            titleTextField.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5),
-            titleTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10),
-            titleTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -10),
+            titleTextField.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: padding),
+            titleTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: padding),
+            titleTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -padding),
             
-            datePickerView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20),
-            datePickerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
-            datePickerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
+            datePickerView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: padding),
+            datePickerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: padding),
+            datePickerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -padding),
             
-            contentTextView.topAnchor.constraint(equalTo: datePickerView.bottomAnchor, constant: 20),
-            contentTextView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
-            contentTextView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
-            contentTextView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -20),
+            contentTextView.topAnchor.constraint(equalTo: datePickerView.bottomAnchor, constant: padding),
+            contentTextView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: padding),
+            contentTextView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -padding),
+            contentTextView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -padding),
         ])
     }
     

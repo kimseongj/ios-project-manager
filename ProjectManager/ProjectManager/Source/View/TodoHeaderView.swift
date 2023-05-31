@@ -8,6 +8,7 @@
 import UIKit
 
 final class TodoHeaderView: UIView {
+    private let labelSpacing: CGFloat = 20
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -59,11 +60,11 @@ final class TodoHeaderView: UIView {
         
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: labelSpacing),
  
             countLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            countLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 20),
-            countLabel.widthAnchor.constraint(equalToConstant: 20)
+            countLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: labelSpacing),
+            countLabel.widthAnchor.constraint(equalToConstant: labelSpacing)
         ])
     }
 }
