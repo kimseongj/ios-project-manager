@@ -15,20 +15,19 @@ class ScheduleManager {
     @Published var doingSchedules: [Schedule] = []
     @Published var doneSchedules: [Schedule] = []
     
-    func sendTodoSchedules() -> AnyPublisher<[Schedule], Never> {
-        return $todoSchedules.eraseToAnyPublisher()
-    }
-    
-    func sendDoingSchedules() -> AnyPublisher<[Schedule], Never> {
-        return $doingSchedules.eraseToAnyPublisher()
-    }
-    
-    func sendDoneSchedules() -> AnyPublisher<[Schedule], Never> {
-        return $doneSchedules.eraseToAnyPublisher()
-    }
-    
     func addTodoSchedule(_ schedule: Schedule) {
         todoSchedules.append(schedule)
+    }
+    
+    func sendSchedule(scheduleType: ScheduleType) -> AnyPublisher<[Schedule], Never> {
+        switch scheduleType {
+        case .todo:
+            return $todoSchedules.eraseToAnyPublisher()
+        case .doing:
+            return $doingSchedules.eraseToAnyPublisher()
+        case .done:
+            return $doneSchedules.eraseToAnyPublisher()
+        }
     }
 
     

@@ -18,14 +18,7 @@ final class DoListViewModel {
     }
     
     private func fetchSchedule(scheduleType: ScheduleType) {
-        switch scheduleType {
-        case .todo:
-            scheduleManager.sendTodoSchedules().assign(to: \.scheduleList, on: self).store(in: &cancelBag)
-        case .doing:
-            scheduleManager.sendDoingSchedules().assign(to: \.scheduleList, on: self).store(in: &cancelBag)
-        case .done:
-            scheduleManager.sendDoneSchedules().assign(to: \.scheduleList, on: self).store(in: &cancelBag)
-        }
+        scheduleManager.sendSchedule(scheduleType: scheduleType).assign(to: \.scheduleList, on: self).store(in: &cancelBag)
     }
     
     func deleteSchedule(scheduleType: ScheduleType, index: Int) {
