@@ -88,11 +88,11 @@
 
 | schedule 생성 | Schedule 이동|
 | :--------: | :--------: |
-| ![](https://hackmd.io/uploads/HkeoxkASn.gif)| ![](https://hackmd.io/uploads/SyroeJ0B2.gif)|
+| ![스케쥴추가](https://github.com/kimseongj/TIL/assets/88870642/d4441bed-0974-4646-ac53-1cbb8cd41ad5)| ![스케쥴이동](https://github.com/kimseongj/TIL/assets/88870642/61a133d5-a03e-49e4-8553-9dd08982f820)|
 
 | schedule 삭제 | schedule 수정 |
 | :---: | :---: |
-|![](https://hackmd.io/uploads/ryLTek0H3.gif)|![](https://hackmd.io/uploads/HyZB-JCS3.gif)|
+|![스케쥴삭제](https://github.com/kimseongj/TIL/assets/88870642/6cb6e98e-f5f5-4dd2-b59a-1290136436bb)|![스케쥴변경](https://github.com/kimseongj/TIL/assets/88870642/f98d8264-0420-43ca-880f-0dab59f8dd53)|
 
 
 ## 🔥 트러블 슈팅
