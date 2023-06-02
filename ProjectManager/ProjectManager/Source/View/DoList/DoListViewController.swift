@@ -11,7 +11,7 @@ import Combine
 class DoListViewController: UIViewController {
     private var cancellables: Set<AnyCancellable> = []
     private var dataSource: UICollectionViewDiffableDataSource<Section, Schedule>?
-    private let doListViewModel = DoListViewModel()
+    private lazy var doListViewModel = DoListViewModel(scheduleType: scheduleType)
     private let scheduleType: ScheduleType
     private let listStackView: UIStackView = {
         let stackView = UIStackView()
@@ -100,23 +100,10 @@ class DoListViewController: UIViewController {
     }
     
     private func setupViewModelBind() {
-        switch scheduleType {
-        case .todo:
-            doListViewModel.scheduleManager.$todoSchedules.sink {
-                self.applySnapshot(schedules: $0)
-                self.configureHeaderViewCountLabel(schedules: $0)
-            }.store(in: &cancellables)
-        case .doing:
-            doListViewModel.scheduleManager.$doingSchedules.sink {
-                self.applySnapshot(schedules: $0)
-                self.configureHeaderViewCountLabel(schedules: $0)
-            }.store(in: &cancellables)
-        case .done:
-            doListViewModel.scheduleManager.$doneSchedules.sink {
-                self.applySnapshot(schedules: $0)
-                self.configureHeaderViewCountLabel(schedules: $0)
-            }.store(in: &cancellables)
-        }
+        doListViewModel.$scheduleList.sink {
+            self.applySnapshot(schedules: $0)
+            self.configureHeaderViewCountLabel(schedules: $0)
+        }.store(in: &cancellables)
     }
     
     private func configureHeaderViewTitle() {

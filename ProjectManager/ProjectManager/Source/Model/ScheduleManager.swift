@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ScheduleManager {
     static let shared = ScheduleManager()
@@ -13,6 +14,18 @@ class ScheduleManager {
     @Published var todoSchedules: [Schedule] = []
     @Published var doingSchedules: [Schedule] = []
     @Published var doneSchedules: [Schedule] = []
+    
+    func sendTodoSchedules() -> AnyPublisher<[Schedule], Never> {
+        return $todoSchedules.eraseToAnyPublisher()
+    }
+    
+    func sendDoingSchedules() -> AnyPublisher<[Schedule], Never> {
+        return $doingSchedules.eraseToAnyPublisher()
+    }
+    
+    func sendDoneSchedules() -> AnyPublisher<[Schedule], Never> {
+        return $doneSchedules.eraseToAnyPublisher()
+    }
     
     func addTodoSchedule(_ schedule: Schedule) {
         todoSchedules.append(schedule)
